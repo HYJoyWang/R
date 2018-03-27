@@ -1,0 +1,12 @@
+legrep_hist = hist(screw$legrep,
+                   freq = FALSE, plot = FALSE)
+legrep_hist$counts = legrep_hist$counts/sum(legrep_hist$counts)
+plot(legrep_hist, main =" Histogram of legal representation", 
+     ylab = "Proportion of total claims", xlab = "legrep")
+
+legrep_hist = hist(screw[,2:6],
+                   freq = FALSE, plot = FALSE)
+legrep_hist$counts = legrep_hist$counts/sum(legrep_hist$counts)
+plot(legrep_hist, main =" Histogram of legal representation", 
+     ylab = "Proportion of total claims", xlab = "legrep")
+plot(screw$op_time, log(screw$total),col = c("red", "blue")[screw$legrep+1])
